@@ -1,0 +1,72 @@
+.env
+__pycache__/
+*.pyc
+*.pyo
+chroma_data/
+.pytest_cache/
+.mypy_cache/
+venv/
+.venv/
+*.egg-info/
+
+# Scratch and Scripts
+scratch/
+scratch_*.py
+check_*.py
+rewrite.py
+
+# Test Files
+test_*.py
+/tests
+*.bak
+/tools
+# Reports & Logs
+*.log
+*.txt
+preprod_*.json
+automation_ai_settings.json
+credentials.json
+
+# Replay artifacts. Each run writes a transcript of a real conversation — the same guest
+# text and phone numbers the corpus holds — so they are scratch, not source.
+tools/replay/runs/
+
+# Eval run output and recorded cassettes. A cassette is a transcript by another name: it
+# stores the head of every prompt sent to Gemini, which is guest text and the system
+# prompt. Ignored by contents, not by directory, so a baseline that *should* be committed
+# (phase 3's CI gate) can be re-included with a `!evals/cassettes/<name>/` line.
+evals/runs/
+evals/cassettes/*
+
+# macOS
+.DS_Store
+
+DOCS-SHARED/*
+PVT-NOTES/*
+PVT-DOCS/*
+.claude/*
+
+# Internal Docs & Local Customizations (Do not push to GitHub)
+docs/
+.agents/
+exports/
+*.csv
+scripts/export_*.py
+test-harness/
+ACCEPTANCE_*.md
+*_REPORT*.md
+*specification*.md
+*Specification*.md
+
+# Only the project README is tracked. Other markdown stays local.
+*.md
+!README.md
+
+# Test runners and eval harness
+evals/
+pytest.ini
+run_e2e_whatsapp_test_suite.py
+npm-audit-report.json
+
+# *.txt above would also hide the dependency list
+!requirements.txt
